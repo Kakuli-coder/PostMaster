@@ -44,6 +44,7 @@ function hideResponseDiv() {
 function resetForm() {
     let postmasterForm = document.querySelector("#postmasterForm");
     postmasterForm.reset();
+    newParameterBox.style.display = "none";
 }
 
 // 5. Function to display Alert
@@ -108,10 +109,10 @@ addParameterBtn.addEventListener("click", (e) => {
         <div class="col-sm-9">
             <div class="d-flex justify-content-around">
                 <div class="flex-fill">
-                    <input type="text" id="paramsKey${addedParamCount + 2}" class="form-control" placeholder="Enter Key ${addedParamCount + 2}" aria-label="paramsKey${addedParamCount + 2}">
+                    <input type="text" id="paramsKey${addedParamCount + 2}" class="form-control" placeholder="Key ${addedParamCount + 2}" aria-label="paramsKey${addedParamCount + 2}">
                 </div>
                 <div class="flex-fill mx-2">
-                    <input type="text" id="paramsValue${addedParamCount + 2}" class="form-control" placeholder="Enter Value ${addedParamCount + 2}"
+                    <input type="text" id="paramsValue${addedParamCount + 2}" class="form-control" placeholder="Value ${addedParamCount + 2}"
                     aria-label="paramsValue${addedParamCount + 2}">
                 </div>
                 <div class="flex-fill">
