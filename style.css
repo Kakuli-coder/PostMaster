@@ -1,0 +1,162 @@
+/* Background */
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, white 50%, rgb(247, 225, 237) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 6s;
+}
+
+.bg3 {
+    animation-duration: 8s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 1px 1px 4px 0 grey;
+}
+
+.navbar-brand {
+    letter-spacing: 0.1rem;
+    font-family: 'Staatliches', cursive;
+}
+
+.nav-item {
+    letter-spacing: 0.1rem;
+}
+
+/* h1 Animation */
+#website-name {
+    letter-spacing: 0.2rem;
+    font-family: 'Staatliches', cursive;
+}
+
+.typewriter p {
+    font-size: 2rem;
+    color: black;
+    font-family: monospace;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(255, 207, 234);
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 5s steps(30, end),
+        blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgb(255, 207, 234)
+    }
+}
+
+.form {
+    border-color: pink;
+    border-style: inset;
+    background-color: rgb(35, 35, 35);
+}
+
+.form:hover {
+    box-shadow: 0 0 20px grey;
+}
+
+label {
+    color: white;
+}
+
+#submit {
+    color: rgb(35, 35, 35);
+    background-color: rgb(255, 207, 234);
+    border-color: black;
+}
+
+#submit:hover {
+    box-shadow: 2px 2px 8px 0 grey;
+}
+
+#responsePre {
+    max-height: 500px;
+}
+
+/* bottom-container */
+.bottom-container {
+    background-color: rgb(35, 35, 35);
+    padding-top: 20px;
+    width: 100%;
+    margin-top: 55vh;
+}
+
+.footer-img {
+    height: 30px;
+    width: 30px;
+    margin: auto 20px;
+}
+
+.footer-img:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(247, 225, 237);
+}
+
+.copyright {
+    color: white;
+    font-size: 0.75rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+    .typewriter p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1010px) {
+    .typewriter p {
+        font-size: 3rem;
+    }
+}

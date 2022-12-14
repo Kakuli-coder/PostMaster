@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PostMaster</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <!-- font-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- Alert -->
+    <div class="container-fluid col-lg-3 fixed-top" id="alert" style="z-index: 10;"></div>
+
+    <!-- navabr -->
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top" style="z-index: 5;">
+        <div class="container-fluid">
+            <span class="navbar-brand">
+                <img src="images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Post Master
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#postMaster"><i class="fa fa-home" aria-hidden="true"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope" class="fa-icon"></i>
+                            Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="postMaster" class="container-fluid my-3 col-lg-8">
+        <!-- bg  -->
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+
+        <!-- animated h1 -->
+        <div class="typewriter">
+            <p class="text-center">Welcome to <span id="website-name">Post Master</span>!</p>
+        </div>
+        <hr>
+
+        <!-- Form  -->
+        <form id="postmasterForm" class="form my-2 container-fluid">
+            <br>
+            <br>
+            <!-- URL Box -->
+            <div class="mb-3 row">
+                <label for="url" class="col-sm-3 col-form-label">URL</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="url" placeholder="Enter URL here">
+                </div>
+            </div>
+
+            <!-- Request Type box -->
+            <div class="mb-3 row">
+                <label for="requestType" class="col-sm-3 col-form-label">Request Type</label>
+                <div class="col-sm-9">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="requestType" id="get" value="GET">
+                        <label class="form-check-label" for="get">
+                            GET
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="requestType" id="post" value="POST">
+                        <label class="form-check-label" for="post">
+                            POST
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Type box -->
+            <div id="contentTypeBox" class="mb-3 row">
+                <label for="contentType" class="col-sm-3 col-form-label">Content Type</label>
+                <div class="col-sm-9">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contentType" id="jsonRadio" value="JSON">
+                        <label class="form-check-label" for="jsonRadio">
+                            JSON
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="contentType" id="paramsRadio"
+                            value="Custom Parameters">
+                        <label class="form-check-label" for="paramsRadio">
+                            Custom Parameters
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JSON Request Box - This will hide on clicking *Custom Parameters* option in 'Content Type' -->
+            <div class="mb-3 row" id="requestJsonBox">
+                <label for="jsonRequest" class="col-sm-3 col-form-label">JSON Request</label>
+                <div class="col-sm-9 mb-3">
+                    <textarea class="form-control" id="jsonRequestText" rows="3"
+                        placeholder="Enter JSON Request here"></textarea>
+                </div>
+            </div>
+
+            <!-- Parameters Box - This will hide on clicking *JSON* option in 'Content Type' -->
+            <div id="parametersBox" class="row">
+                <div class="d-flex justify-content-around my-2">
+                    <label for="params1" class="col-sm-3 col-form-label mx-2">Parameter<strong>#1</strong></label>
+                    <div class="col-sm-9">
+                        <div class="d-flex justify-content-around">
+                            <div class="flex-fill">
+                                <input type="text" id="paramsKey1" class="form-control" placeholder="Enter Key 1"
+                                    aria-label="paramsKey1">
+                            </div>
+                            <div class="flex-fill mx-2">
+                                <input type="text" id="paramsValue1" class="form-control" placeholder="Enter Value 1"
+                                    aria-label="paramsValue1">
+                            </div>
+                            <div class="flex-fill">
+                                <button id="addParameterBtn" class="btn bg-light bg-gradient">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="newParameterBox" class="row"></div>
+
+            <!-- Submit button that will trigger fetch API  -->
+            <br>
+            <button id="submit" class="btn btn-container my-2">Fetch Response</button>
+            <hr>
+        </form>
+
+        <div id="responseJsonDiv" class="form my-3 container-fluid">
+            <br>
+            <!-- Response Box  -->
+            <div id="responseJsonBox" class="mb-3 my-2 row">
+                <label for="jsonResponse" class="col-sm-3 col-form-label my-3">Response :</label>
+                <div class="col-sm-12 mb-3">
+                    <pre id="responsePre" class="language-javascript">
+                        <code id="responsePrism" class="language-javascript"></code>
+                    </pre>
+                </div>
+            </div>
+            <br>
+        </div>
+
+    </div>
+
+    <!-- contact us -->
+    <div id="contact" class="bottom-container text-center col-lg-12">
+        <a href="https://www.linkedin.com/in/kakuli-095983202/" target="_blank"><img class="footer-img"
+                src="images/linkedin logo.png" alt="linkedin-logo-img"></a>
+        <a href="mailto:kakuli.bit@gmail.com" target="_blank"><img class="footer-img" src="images/gmail.webp"
+                alt="gmail-logo-img"></a>
+        <a href="https://github.com/Kakuli-coder" target="_blank"><img class="footer-img" src="images/github logo.png"
+                alt="github-logo-img"></a>
+        <p class="copyright">Made with 🤍 by <em>Kakuli</em></p>
+    </div>
+
+    <!-- javaScript -->
+    <script src="index.js"></script>
+    <script src="prism.js"></script>
+
+    <!-- bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
