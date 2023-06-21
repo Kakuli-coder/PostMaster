@@ -1,5 +1,5 @@
 # 📮 PostMaster
-Post Master is a website that fetches responses from RESTful APIs using GET and POST methods.
+PostMaster is a website that retrieves data from RESTful APIs by utilizing GET and POST methods
 
 
 ## Get Started with PostMaster
